@@ -1,0 +1,10 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: kafka-learning
+
+kafka:
+  broker:
+    address: localhost:9092
