@@ -20,12 +20,12 @@ public class ConsumerConfig {
     private String kafka_broker_address;
 
     @Bean
-    public ConsumerFactory<String,String> consumerFactory(){
-        Map<String,Object> consumerConfigProps = new HashMap<>();
+    public ConsumerFactory<String, String> consumerFactory() {
+        Map<String, Object> consumerConfigProps = new HashMap<>();
         consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafka_broker_address);
-        consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG,"consumer-group");
+        consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, "consumer-group");
         consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class);
-        return  new DefaultKafkaConsumerFactory<>(consumerConfigProps);
+        consumerConfigProps.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        return new DefaultKafkaConsumerFactory<>(consumerConfigProps);
     }
 }

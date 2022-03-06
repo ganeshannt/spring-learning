@@ -13,7 +13,7 @@ public class MQConsumer {
 
     @JmsListener(destination = "samplequeue")
     public String consumeMessage(MyMessage myMessage) {
-        LOGGER.info("Message received! {}",myMessage);
+        LOGGER.info("Message received! {}", myMessage);
         System.out.println(myMessage.getMessage());
         return myMessage.getMessage();
     }
