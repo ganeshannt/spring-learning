@@ -1,0 +1,12 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: FILE-HANDLING
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 10MB
+      max-request-size: 20MB
