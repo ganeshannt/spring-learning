@@ -12,8 +12,8 @@
         <module>kafka</module>
         <module>activemq</module>
         <module>authentication-sample</module>
-        <module>Authorization-Server</module>
         <module>FileHandling</module>
+        <module>redis</module>
     </modules>
 
 
