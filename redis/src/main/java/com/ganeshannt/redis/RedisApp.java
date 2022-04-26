@@ -2,6 +2,7 @@ package com.ganeshannt.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * @author Ganeshan Nagarajan
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 
+@EnableCaching
 @SpringBootApplication
 public class RedisApp {
     public static void main(String[] args) {
