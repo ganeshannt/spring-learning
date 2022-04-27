@@ -34,6 +34,7 @@ public class UserRepository {
     }
 
     public User getUserById(long id) {
+        System.out.println("not from cache ... inside user repository");
         User user = (User) redisTemplate.opsForHash().get(REDIS_KEY, id);
         return user;
     }
@@ -48,13 +49,13 @@ public class UserRepository {
         }
     }
 
-    public boolean update(long user_id, User user) {
+    public User update(long user_id, User user) {
         try {
             redisTemplate.opsForHash().put(REDIS_KEY, user_id, user);
-            return true;
+            return getUserById(user_id);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
     }
 }

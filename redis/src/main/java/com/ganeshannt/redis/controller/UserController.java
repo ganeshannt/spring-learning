@@ -26,10 +26,8 @@ public class UserController {
     @PostMapping("/save")
     public ResponseEntity<String> saveUser(@RequestBody User user) {
         boolean result = userService.saveUser(user);
-        if (result)
-            return ResponseEntity.ok("User created successfully");
-        else
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if (result) return ResponseEntity.ok("User created successfully");
+        else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @GetMapping("/getAll")
@@ -37,27 +35,23 @@ public class UserController {
         return ResponseEntity.ok(userService.getAll());
     }
 
-    @GetMapping("/get/{user_id}")
-    public ResponseEntity<User> getUserById(@PathVariable(value = "user_id") long user_id) {
-        User user = userService.getUserById(user_id);
+    @GetMapping("/get/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") long id) {
+        User user = userService.getUserById(id);
         return ResponseEntity.ok(user);
     }
 
     @DeleteMapping("/delete/{user_id}")
     public ResponseEntity<String> delete(@PathVariable(value = "user_id") long user_id) {
         boolean output = userService.delete(user_id);
-        if (output)
-            return ResponseEntity.ok("deleted successfully");
-        else
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        if (output) return ResponseEntity.ok("deleted successfully");
+        else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @PutMapping("/update/{user_id}")
     public ResponseEntity<User> update(@PathVariable(value = "user_id") long user_id, @RequestBody User user) {
-        boolean output = userService.update(user_id, user);
-        if (output)
-            return ResponseEntity.ok(user);
-        else
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        User updatedUser = userService.update(user_id, user);
+        if (updatedUser != null) return ResponseEntity.ok(user);
+        else return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }
