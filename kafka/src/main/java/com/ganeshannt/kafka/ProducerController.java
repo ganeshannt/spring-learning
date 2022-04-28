@@ -13,20 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/produce/")
+@RequestMapping("api/v1/produce/")
 public class ProducerController {
 
     @Autowired
     KafkaTemplate<String, String> kafkaTemplate;
 
-
     @GetMapping("/{message}")
     public String produceMessage(@PathVariable("message") String message) {
         for (int i = 0; i < 10; i++) {
-            String value = "message" + i;
+            String value = message+" "+ i;
             kafkaTemplate.send("third-topic", value);
         }
-//        kafkaTemplate.send("first-topic message ",message);
+        kafkaTemplate.send("first-topic",message);
         return "producer message " + message;
     }
 }
