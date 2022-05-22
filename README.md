@@ -12,5 +12,6 @@
 |Authentication Server | 8003 |
 |File Handling | 8004 |
 |Redis | 8005 |
+|Batch Processing | 8006 |
 
 #### Don't try to be perfect.Try to better than you were yesterday !!
