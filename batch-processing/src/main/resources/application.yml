@@ -1,0 +1,9 @@
+server:
+  port: 8006
+
+input-file: file:users.csv
+
+spring:
+  batch:
+    job:
+      enabled: false
