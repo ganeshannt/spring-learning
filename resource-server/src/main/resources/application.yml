@@ -1,0 +1,8 @@
+server:
+  port: 8008
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8007/oauth2/jwks
