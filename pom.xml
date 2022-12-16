@@ -17,6 +17,7 @@
         <module>batch-processing</module>
         <module>auth-server</module>
         <module>resource-server</module>
+        <module>crud</module>
     </modules>
 
 

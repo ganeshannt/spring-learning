@@ -22,10 +22,10 @@ public class ProducerController {
     @GetMapping("/{message}")
     public String produceMessage(@PathVariable("message") String message) {
         for (int i = 0; i < 10; i++) {
-            String value = message+" "+ i;
+            String value = message + " " + i;
             kafkaTemplate.send("third-topic", value);
         }
-        kafkaTemplate.send("first-topic",message);
+        kafkaTemplate.send("first-topic", message);
         return "producer message " + message;
     }
 }

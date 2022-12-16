@@ -13,6 +13,7 @@ public class MainController {
     public String secureMessage() {
         return "secure message";
     }
+
     @GetMapping("/public/message")
     public String unSecureMessage() {
         return "unsecure message";

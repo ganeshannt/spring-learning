@@ -1,7 +1,6 @@
 package com.ganeshannt.redis.model;
 
 import lombok.Data;
-import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 
